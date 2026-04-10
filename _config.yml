@@ -1,0 +1,10 @@
+title: "IS 445 — Building inventory visualizations"
+description: "Homework submission (Python, Altair, Vega-Lite)"
+theme: minima
+url: "https://ipate7.github.io"
+baseurl: "/HW5"
+exclude:
+  - Workbook.ipynb
+  - requirements.txt
+  - README.md
+  - .venv

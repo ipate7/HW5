@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <style>
+    #vis.vega-embed {
+      width: 100%;
+      display: flex;
+    }
+
+    #vis.vega-embed details,
+    #vis.vega-embed details summary {
+      position: relative;
+    }
+  </style>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega@6"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-lite@6.1.0"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/vega-embed@7"></script>
+</head>
+<body>
+  <div id="vis"></div>
+  <script>
+    (function(vegaEmbed) {
+      var spec = {"config": {"view": {"continuousWidth": 300, "continuousHeight": 300}}, "data": {"name": "data-625a2e65e7be23ff75553f0198fd60ed"}, "mark": {"type": "bar"}, "encoding": {"color": {"field": "mean_year_constructed", "scale": {"scheme": "viridis"}, "title": "Mean year constructed", "type": "quantitative"}, "tooltip": [{"field": "Congress Dist", "title": "District", "type": "nominal"}, {"field": "total_sqft", "format": ",.0f", "title": "Total sq ft", "type": "quantitative"}, {"field": "mean_year_constructed", "format": ".1f", "title": "Mean year constructed", "type": "quantitative"}, {"field": "n", "title": "Buildings", "type": "quantitative"}], "x": {"field": "total_sqft", "title": "Total square footage (sum)", "type": "quantitative"}, "y": {"field": "Congress Dist", "sort": "-x", "title": "Congressional district", "type": "nominal"}}, "height": 400, "title": "State inventory footprint by congressional district", "width": 550, "$schema": "https://vega.github.io/schema/vega-lite/v6.1.0.json", "datasets": {"data-625a2e65e7be23ff75553f0198fd60ed": [{"Congress Dist": "1", "total_sqft": 2351762, "mean_year_constructed": 1975.0454545454545, "n": 48}, {"Congress Dist": "2", "total_sqft": 6285684, "mean_year_constructed": 1965.4012738853503, "n": 318}, {"Congress Dist": "3", "total_sqft": 1293687, "mean_year_constructed": 1970.0, "n": 36}, {"Congress Dist": "4", "total_sqft": 317741, "mean_year_constructed": 1971.9, "n": 11}, {"Congress Dist": "5", "total_sqft": 1809022, "mean_year_constructed": 1968.891304347826, "n": 46}, {"Congress Dist": "6", "total_sqft": 145659, "mean_year_constructed": 1986.5384615384614, "n": 26}, {"Congress Dist": "7", "total_sqft": 9211651, "mean_year_constructed": 1965.0272727272727, "n": 110}, {"Congress Dist": "8", "total_sqft": 1461548, "mean_year_constructed": 1962.6037735849056, "n": 107}, {"Congress Dist": "9", "total_sqft": 77978, "mean_year_constructed": 1978.888888888889, "n": 10}, {"Congress Dist": "10", "total_sqft": 929267, "mean_year_constructed": 1969.804347826087, "n": 138}, {"Congress Dist": "11", "total_sqft": 3467894, "mean_year_constructed": 1949.9675925925926, "n": 218}, {"Congress Dist": "12", "total_sqft": 12444775, "mean_year_constructed": 1974.3199745547074, "n": 1623}, {"Congress Dist": "13", "total_sqft": 31849251, "mean_year_constructed": 1964.624659400545, "n": 1490}, {"Congress Dist": "14", "total_sqft": 857108, "mean_year_constructed": 1968.342105263158, "n": 233}, {"Congress Dist": "15", "total_sqft": 7209934, "mean_year_constructed": 1978.4992784992785, "n": 1462}, {"Congress Dist": "16", "total_sqft": 8725880, "mean_year_constructed": 1968.1137897782064, "n": 1060}, {"Congress Dist": "17", "total_sqft": 4347743, "mean_year_constructed": 1973.545008183306, "n": 661}, {"Congress Dist": "18", "total_sqft": 8120838, "mean_year_constructed": 1969.684260131951, "n": 1102}]}};
+      var embedOpt = {"mode": "vega-lite"};
+
+      function showError(el, error){
+          el.innerHTML = ('<div style="color:red;">'
+                          + '<p>JavaScript Error: ' + error.message + '</p>'
+                          + "<p>This usually means there's a typo in your chart specification. "
+                          + "See the javascript console for the full traceback.</p>"
+                          + '</div>');
+          throw error;
+      }
+      const el = document.getElementById('vis');
+      vegaEmbed("#vis", spec, embedOpt)
+        .catch(error => showError(el, error));
+    })(vegaEmbed);
+
+  </script>
+</body>
+</html>
